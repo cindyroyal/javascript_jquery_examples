@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Which Austin Musical Group...</title>
+<style>
+body {
+background-color: lightblue;
+font-family: Helvetica;
+}
+
+#main {
+width: 60%;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background-image: url('acl.jpg');
+
+}
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header"><h1>Which Austin musical act are you most like?</h1></div>
+<table>
+<form  id="form1" action=" "/>
+<tr><td>
+<p>How old are you?</p></td><td>
+<select id="thedropdown">
+  <option value="1">under 18</option>
+  <option value="2">18-34</option>
+  <option value="3">35+</option>
+</select>
+</td></tr>
+<tr><td>
+<p>What would you prefer to do?</p></td><td>
+<input type="radio" name="activity" id="party" value="1" />Party</td><td>
+<input type="radio" name="activity" id="rock" value="2" />Rock out</td><td>
+<input type="radio" name="activity" id="beer" value="3" />Drink beer
+</td></tr>
+<tr><td>
+<p>What's your favorite style of music?</p></td><td>
+<input type="radio" name="style" id="rock2" value="1" />Rock</td><td>
+<input type="radio" name="style" id="indie" value="2" />Indie</td><td>
+<input type="radio" name="style" id="country" value="3" />Country</td>
+</tr>
+<tr><td>
+<br />
+<input type="submit" value="Submit">
+</td></tr>
+</form>
+</table>
+<p id="answer"></p>
+<p id="answer2"></p>
+</div>
+<script>
+   
+   activityvar = ['party', 'rock', 'beer'];
+   genrevar = ['rock2', 'indie', 'country'];
+    
+	   document.getElementById("form1").onsubmit=function() {
+	   //dropdown is actually easier, because you just grab the value, don't need if or for.
+	   age=document.getElementById("thedropdown").value;
+	   
+	   
+	   for(i=0; i<activityvar.length; i++) {
+	   if (document.getElementById(activityvar[i]).checked) {
+	   activity = document.getElementById(activityvar[i]).value 
+	   }
+	   }//end for
+	   
+	   for(i=0; i<genrevar.length; i++) {
+	   if (document.getElementById(genrevar[i]).checked) {
+	   genre = document.getElementById(genrevar[i]).value 
+	   }
+	   }//end for
+	   
+	   total = parseInt(age) + parseInt(activity) + parseInt(genre);
+	   document.getElementById("answer").innerHTML = total;
+	   
+	   if(total < 4) {
+document.getElementById("answer2").innerHTML = "You got Quiet Company."
+}
+
+   if(total >=4 && total < 7) {
+document.getElementById("answer2").innerHTML = "You got Spoon."
+}
+	
+	if(total >=7) {
+document.getElementById("answer2").innerHTML = "You got Willie Nelson."
+}   
+	
+	   
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+	
+   
+
+
+
+</script>
+
+
+</body>
+</html>

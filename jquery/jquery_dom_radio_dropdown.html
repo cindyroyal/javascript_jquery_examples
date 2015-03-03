@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>JQuery - DOM CSS</title>
+ <script src="http://code.jquery.com/jquery.js"></script> 
+
+ </head>
+
+ <body>
+ <form id="myForm">
+ 
+<p>How old are you?</p>
+<input type="radio" name = "age" id="young" value="1" />under 18<br />
+<input type="radio" name = "age" id="mid" value="2" />19-34 <br />
+<input type="radio" name = "age" id="old" value="3" />34+<br />
+
+<p>What is your favorite color?</p>
+<select id="ageList">
+<option value="1">Red</option>
+<option value="2">Green</option>
+
+</select >
+ <p><input type="submit" value="Submit"></p>
+ </form>
+ <p id="yourAge">Age: </p>
+ <p id="yourColor">This gets text color: </p>
+<p id="yourColorId">This gets value of color: </p>
+ <script>
+ 
+ $(document).ready(function(){
+ 
+ $('#myForm').submit(function() {
+ age = $("input[name='age']:checked").val(); 
+ $("#yourAge").append(age);
+ 
+ color =  $("#ageList option:selected").text();
+ $("#yourColor").append(color);
+ 
+ colorId =  $("#ageList").val();
+ $("#yourColorId").append(colorId);
+ 
+ return false;
+});
+});
+ </script>
+ </body>
+</html>

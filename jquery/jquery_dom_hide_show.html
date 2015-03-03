@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>JQuery - DOM Hide Show</title>
+ <script src="http://code.jquery.com/jquery.js"></script> 
+<style>
+#greeting {
+display: none;
+}
+</style>
+ </head>
+
+ <body>
+ <form id="myForm">
+ <p>Name: <input type="text" id="firstname" /><br />
+ <input type="submit" value="Submit">
+ </form>
+ <p id="greeting">Hello </p>
+ <script>
+ 
+ $(document).ready(function(){
+ 
+ $('#myForm').submit(function() {
+ firstname = $("#firstname").val(); 
+ $("#greeting").show();
+ $("#greeting").append(firstname );
+  
+ return false;
+});
+});
+ </script>
+ </body>
+</html> 

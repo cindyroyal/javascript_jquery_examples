@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Hello World</title>
+ <script src="http://code.jquery.com/jquery.js"></script> 
+ 
+ </head>
+
+ <body>
+
+ 
+ <script>
+ 
+  $(document).ready(function(){
+   $.post("http://www.google.com", "texas football",
+     function(result) {
+     $("#maindiv").html(result);
+     }, 
+     "html"); 
+ return false;
+ });
+ 
+ 
+ </script>
+ 
+ <p id="maindiv"></p>
+ </body>
+</html> 

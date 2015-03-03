@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>JQuery - CSS Class</title>
+ <script src="http://code.jquery.com/jquery.js"></script> 
+
+ </head>
+
+ <body>
+ <form id="myForm">
+ <p>Name: <input type="text" id="firstname" /><br />
+ <input type="submit" value="Submit">
+ </form>
+ <p id="greeting" class="new">Hello  </p>
+ <p class="new">Welcome to the Site</p>
+ <p class="new">Thank you for visiting.</p>
+
+ <script>
+ 
+ $(document).ready(function(){
+ 
+ $('#myForm').submit(function() {
+ firstname = $("#firstname").val(); 
+ $("#greeting").html("Hello " + firstname );
+  $(".new").css("color", "red");
+
+  
+ return false;
+});
+});
+ </script>
+ </body>
+</html>

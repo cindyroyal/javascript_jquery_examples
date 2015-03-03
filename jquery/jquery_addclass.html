@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>JQuery - CSS Add Class</title>
+ <script src="http://code.jquery.com/jquery.js"></script> 
+<style>
+.bigred {
+font-size: 30px;
+color: red;
+}
+
+</style>
+
+
+ </head>
+
+ <body>
+ <form id="myForm">
+ <p>Name: <input type="text" id="firstname" /><br />
+ <input type="submit" value="Submit">
+ </form>
+ <p id="greeting" class="new">Hello  </p>
+
+ <script>
+ 
+ $(document).ready(function(){
+ 
+ $('#myForm').submit(function() {
+ firstname = $("#firstname").val(); 
+ $("#greeting").html("Hello " + firstname );
+ $("#greeting").addClass("bigred");
+ return false;
+});
+});
+ </script>
+ </body>
+</html>

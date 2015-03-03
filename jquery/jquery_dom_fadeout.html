@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>JQuery - DOM Fade Out</title>
+ <script src="http://code.jquery.com/jquery.js"></script> 
+<style>
+#welcome {
+display: none;
+}
+</style>
+ </head>
+
+ <body>
+ <form id="myForm">
+ <p>Name: <input type="text" id="firstname" /><br />
+ <input type="submit" value="Submit">
+ </form>
+ <p id="greeting">Sign In </p>
+ <p id="welcome">Welcome</p>
+ <script>
+ 
+ $(document).ready(function(){
+ 
+ $('#myForm').submit(function() {
+ firstname = $("#firstname").val(); 
+ $("#greeting").fadeOut("slow");
+ $("#welcome").html("Hello " + firstname );
+  $("#welcome").fadeIn("slow");
+
+  
+ return false;
+});
+});
+ </script>
+ </body>
+</html> 

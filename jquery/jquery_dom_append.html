@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>JQuery - DOM Append</title>
+ <script src="http://code.jquery.com/jquery.js"></script> 
+
+ </head>
+
+ <body>
+ <form id="myForm">
+ <p>Name: <input type="text" id="firstname" /><br />
+ <input type="submit" value="Submit">
+ </form>
+ <p id="greeting">Hello </p>
+ <script>
+ 
+ $(document).ready(function(){
+ $('#myForm').submit(function() {
+ firstname = $("#firstname").val(); 
+
+ $("#greeting").append(firstname );
+  
+ return false;
+});
+});
+ </script>
+ </body>
+</html> 
