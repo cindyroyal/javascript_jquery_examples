@@ -1,0 +1,54 @@
+<html>
+<head>
+
+</head>
+
+<body>
+<form  id="form1" action=" "/>
+
+<p>What's your zipcode?</p>
+
+<select id="thedropdown">
+  <option value="78701">78701</option>
+  <option value="78702">78702</option>
+  <option value="78703">78703</option>
+</select>
+<input type="submit" value="Submit">
+</form>
+
+<script>
+//json for a sample of data
+var data = [
+{zipcode: "78701", noise: 20},
+{zipcode: "78702", noise: 50},
+{zipcode: "78703", noise: 45}
+];
+
+//function that executes when you submit the form
+document.getElementById("form1").onsubmit=function() {
+	  
+// assigns value in dropdown to a variable
+zip = document.getElementById("thedropdown").value;
+
+//changes the DOM element for zipcode to form value
+document.getElementById("zip").innerHTML= zip;
+
+//for loop reads the json and returns the noise value if value from form equals value in json
+for (i=0; i<data.length; i++) {
+  if (zip==data[i].zipcode){
+  document.getElementById("noise").innerHTML= data[i].noise;
+  }
+  
+};
+
+return false; //need this so page doesn't refresh
+};
+
+</script>
+
+<p>Your zipcode is: <span id=zip></span></p>
+<p>You had <span id="noise"></span> complaints</p>
+
+</body>
+
+</html>
